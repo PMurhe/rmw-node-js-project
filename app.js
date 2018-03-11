@@ -4,7 +4,7 @@ var  db = require('./dbConnection.js');
 var express = require('express');
 var app     = express();
 var bodyParser = require('body-parser');
-const port = process.env.PORT || 8081;
+var port    = 8081;
 
 var globSync = require('glob').sync;
 
@@ -26,16 +26,12 @@ allRoutes.forEach(function(routes) {
 
 });
 
-/*app.listen(port);
-console.log('App listening on port : ' + port);*/
-
-/*app.get('/sample', function(req, res) {
-    res.send('this is a sample!');  
-});*/
-
-
-app.listen(port,function(err,res){
-    if(!err){
-        console.log(`App is up and running on port ${port}`);
-    }
+var server = app.listen(8081, "127.0.0.1", function () {
+ 
+  var host = server.address().address
+  var port = server.address().port
+ 
+  console.log("Example app listening at http://%s:%s", host, port)
+ 
 });
+
