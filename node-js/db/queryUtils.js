@@ -1,4 +1,4 @@
-const  db = require('../dbConnection.js');
+const  db = require('../config/dbConnection.js');
 
 var methods  = {
 	

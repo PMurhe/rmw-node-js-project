@@ -2,7 +2,7 @@
 var express = require('express');
 var app     = express();
 var router = express.Router();
-var  db = require('../dbConnection.js');
+var  db = require('../config/dbConnection.js');
 
 
 router.post('/saveProductMasterDetails', function(req, res) {
