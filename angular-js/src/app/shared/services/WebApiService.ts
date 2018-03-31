@@ -11,7 +11,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class WebApiService {
-    public Base_url: string = 'http://localhost:8080/';
+    public Base_url: string = 'http://localhost:8081/services/';
     // public Base_url: string = 'https://reqres.in/api/users';
     public _url: string='';
     headers: Headers;
@@ -23,31 +23,32 @@ export class WebApiService {
     //    this.options = new RequestOptions({ headers: this.headers });
     }
 
-    createService(url: string, param: any): Observable<any> {
-    debugger;    
-    let body = JSON.stringify(param);
-    return this._http
-        .post(url, body)
-        .map(this.extractData)
-        .catch(this.handleError);
-    }
+    // createService(url: string, param: any): Observable<any> {
+    // debugger;    
+    // let body = JSON.stringify(param);
+    // return this._http
+    //     .post(url, body)
+    //     .map(this.extractData)
+    //     .catch(this.handleError);
+    // }
 
-    private extractData(res: Response) {
-        let body = res.json();
-        return body || {};
-    }
+    // private extractData(res: Response) {
+    //     let body = res.json();
+    //     return body || {};
+    // }
 
-    private handleError(error: any) {
-        let errMsg = (error.message) ? error.message :
-            error.status ? `${error.status} - ${error.statusText}` : 'Server error';
-        console.error(errMsg);
-        return Observable.throw(errMsg);
-    }
+    // private handleError(error: any) {
+    //     let errMsg = (error.message) ? error.message :
+    //         error.status ? `${error.status} - ${error.statusText}` : 'Server error';
+    //     console.error(errMsg);
+    //     return Observable.throw(errMsg);
+    // }
 
     /**
      * saveData 
      */
      public saveData(postData: any,url: string) {
+        debugger 
         this._url = url;
         let data: any = postData;
         return this._http.post(this.Base_url+this._url,data)

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
+//import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 //import { HttpClientModule } from '@angular/common/http';
@@ -35,7 +35,7 @@ import { ReportsComponent } from '../app/Dashboard/Reports/reports.component';
     
   ],
   imports: [
-    BrowserModule,routing, NgbModule.forRoot(),FormsModule, RouterModule,HttpModule, BrowserModule,CarouselModule,
+    BrowserModule,routing,FormsModule, RouterModule,HttpModule, BrowserModule,CarouselModule,
     NgxPaginationModule
     
   ],
