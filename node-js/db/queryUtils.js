@@ -52,8 +52,24 @@ var methods  = {
 				callback(null,null);
 			}
 		});
-	}
+	},
 
+	/** function to get all drop down box data */
+	getDropDownData : function(callback){
+		var query = "select product_code,product_name,base_price from master_product";
+
+		db.query(query,function(err,dbres){
+			if(err){
+				callback(err,null);
+			}
+			else if (dbres!= '' && dbres != null){
+				callback(null,dbres);
+			}
+			else{
+				callback(null,null);
+			}
+		});
+	},
 }
 
 module.exports = {
