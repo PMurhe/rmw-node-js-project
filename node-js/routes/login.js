@@ -7,7 +7,7 @@ var datetime = require('node-datetime');
 var queryUtils = require('../db/queryUtils');
 
 router.post('/login', function(req, res) {
-	var user_name  = req.body.user_name;
+	var user_name  = req.body.username;
 	var password = req.body.password;
 	password = base64.encode(password);
 
