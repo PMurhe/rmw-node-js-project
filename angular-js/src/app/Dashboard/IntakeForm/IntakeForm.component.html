@@ -1,5 +1,5 @@
-
-<navigationBar></navigationBar>
+<navigationBar>
+</navigationBar>
 <div class="container">
     <div class="leftcol">
         <div class="">
@@ -78,15 +78,11 @@
                                 <div class="row">
                                     <div class="col-sm-4">Product Name : </div>
                                     <div class="col-sm-8 form-group">
-                                        <input type="text"  [(ngModel)]="firstname" name='FIRSTNAME' class="form-control">
+                                        <select class="form-control" [(ngModel)]="selected">
+                                            <option *ngFor="let name of resData" [(ngValue)]="name.product_name">{{name.product_name}}</option>
+                                        </select>
                                     </div>
                                 </div>
-                                <!-- <div class="row">
-                                    <div class="col-sm-4">Middle Name : </div>
-                                    <div class="col-sm-8 form-group">
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div> -->
                                 <div class="row">
                                     <div class="col-sm-4">Quantity : </div>
                                     <div class="col-sm-8 form-group">
@@ -191,21 +187,21 @@
                             </div>
                         </div>
                         <ul class="list-unstyled list-inline pull-right">
-                                <li>
-                                    <button type="clear" on-click=" IntakeForm.reset()" class="btn btn-info next-step" >Clear
-                                        <!-- <i class="fa fa-chevron-right"></i> -->
-                                    </button>
-                                </li>
-                            </ul>
+                            <li>
+                                <button type="clear" on-click=" IntakeForm.reset()" class="btn btn-info next-step">Clear
+                                    <!-- <i class="fa fa-chevron-right"></i> -->
+                                </button>
+                            </li>
+                        </ul>
                         <ul class="list-unstyled list-inline pull-right">
-                                <li>
-                                    <button type="submit" class="btn btn-info next-step">Submit
-                                        <!-- <i class="fa fa-chevron-right"></i> -->
-                                    </button>
-                                </li>
-                            </ul>
+                            <li>
+                                <button type="submit" class="btn btn-info next-step">Submit
+                                    <!-- <i class="fa fa-chevron-right"></i> -->
+                                </button>
+                            </li>
+                        </ul>
                     </form>
-                    
+
                 </div>
                 <!-- <div id="menu2" class="tab-pane fade">
                     <p class="text-sm-right">

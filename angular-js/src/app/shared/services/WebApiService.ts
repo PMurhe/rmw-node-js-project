@@ -59,12 +59,9 @@ export class WebApiService {
       /**
      * FetchData
      */
-    public FetchData(postData: any,url: string) {
+    public fetchData(url: string) {
         this._url = url;
-        let data: any = postData;
-        let patientIdentification :any={}
-        patientIdentification.patientId=postData;
-        return this._http.post(this.Base_url+this._url,patientIdentification)
+        return this._http.get(this.Base_url+this._url)
         .map((resp: Response) => resp.json()
     )
         .catch(this.errorHandler);
