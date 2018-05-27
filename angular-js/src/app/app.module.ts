@@ -9,6 +9,7 @@ import { HttpModule } from '@angular/http';
 import { DatePipe } from '@angular/common';
 import { CarouselModule } from 'angular4-carousel';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -36,7 +37,7 @@ import { ReportsComponent } from '../app/Dashboard/Reports/reports.component';
   ],
   imports: [
     BrowserModule,routing,FormsModule, RouterModule,HttpModule, BrowserModule,CarouselModule,
-    NgxPaginationModule
+    NgxPaginationModule,HttpClientModule
     
   ],
   providers: [WebApiService,DatePipe,AuthService,LoggedInGuard],

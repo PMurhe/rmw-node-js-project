@@ -11,8 +11,8 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class WebApiService {
-    public Base_url: string = 'http://localhost:8081/services/';
-    // public Base_url: string = 'https://reqres.in/api/users';
+    //public Base_url: string = 'http://localhost:8081/services/';
+     public Base_url: string = 'https://reqres.in/api/users';
     public _url: string='';
     headers: Headers;
     options: RequestOptions;
@@ -56,6 +56,8 @@ export class WebApiService {
         .catch(this.errorHandler);
     }
      
+
+    
       /**
      * FetchData
      */
